@@ -7,7 +7,7 @@ public class URLPool {
     public ConcurrentLinkedQueue<URLDepthPair> notVisited = new ConcurrentLinkedQueue<>();
     public ConcurrentHashMap<URLDepthPair, Boolean> visited = new ConcurrentHashMap<>();
     int maxDepth;
-    int cWait = 0;
+    int threadKeeper = 0;
 
     public URLPool(int maxDepth) {
         this.maxDepth = maxDepth;
@@ -15,19 +15,19 @@ public class URLPool {
 
     public synchronized URLDepthPair getPair() {
         while (notVisited.size() == 0) {
-            cWait++;
+            threadKeeper++;
             try {
                 wait();
             } catch (InterruptedException e) {
                 System.out.println("");
             }
-            cWait--;
+            threadKeeper--;
         }
         return notVisited.poll();
     }
 
     public synchronized void addPair(URLDepthPair pair) {
-        if(URLDepthPair.check(visited, pair)) {
+        if(!visited.containsKey(pair)) {
             visited.put(pair, true);
             if (pair.getDepth() < maxDepth) {
                 notVisited.add(pair);
@@ -37,7 +37,7 @@ public class URLPool {
     }
 
     public synchronized int getWait() {
-        return cWait;
+        return threadKeeper;
     }
 
     public ConcurrentHashMap<URLDepthPair, Boolean> getResult() {

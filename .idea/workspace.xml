@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d6617c0-0ec3-4e86-8344-120885c56409" name="Changes" comment="one thread">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CrawlerTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/URLPool.java" afterDir="false" />
+    <list default="true" id="4d6617c0-0ec3-4e86-8344-120885c56409" name="Changes" comment="with threads">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Crawler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Crawler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/URLDepthPair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/URLDepthPair.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/URLPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/URLPool.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +73,7 @@
       <updated>1670881368370</updated>
       <workItem from="1670881369767" duration="5197000" />
       <workItem from="1670962575989" duration="11496000" />
-      <workItem from="1671020915286" duration="15280000" />
+      <workItem from="1671020915286" duration="15966000" />
     </task>
     <task id="LOCAL-00001" summary="one thread">
       <created>1671056114175</created>
@@ -83,7 +82,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671056114175</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="with threads">
+      <created>1671064027658</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1671064027658</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -102,7 +108,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="one thread" />
-    <option name="LAST_COMMIT_MESSAGE" value="one thread" />
+    <MESSAGE value="with threads" />
+    <option name="LAST_COMMIT_MESSAGE" value="with threads" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
