@@ -2,9 +2,10 @@ package org.example;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class URLDepthPair {
-    final private String protocol_prefix = "http://";
     private final int depth;
 
     private final URL url;
@@ -41,6 +42,14 @@ public class URLDepthPair {
 
     public URL getUrl() {
         return url;
+    }
+
+    public static boolean check(ConcurrentHashMap<URLDepthPair, Boolean> resultLink, URLDepthPair pair) {
+        boolean isAlready = true;
+        for (Map.Entry<URLDepthPair, Boolean> c : resultLink.entrySet())
+            if (c.getKey().getUrl().equals(pair.getUrl()))
+                isAlready=false;
+        return isAlready;
     }
 
     @Override
