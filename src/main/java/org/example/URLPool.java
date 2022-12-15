@@ -1,11 +1,13 @@
 package org.example;
 
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.HashMap;
+import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class URLPool {
-    public ConcurrentLinkedQueue<URLDepthPair> notVisited = new ConcurrentLinkedQueue<>();
-    public ConcurrentHashMap<URLDepthPair, Boolean> visited = new ConcurrentHashMap<>();
+    public Queue<URLDepthPair> notVisited = new ConcurrentLinkedQueue<>() {
+    };
+    public HashMap<URLDepthPair, Boolean> visited = new HashMap<>();
     int maxDepth;
     int threadKeeper = 0;
 
@@ -40,7 +42,7 @@ public class URLPool {
         return threadKeeper;
     }
 
-    public ConcurrentHashMap<URLDepthPair, Boolean> getResult() {
+    public HashMap<URLDepthPair, Boolean> getResult() {
         return visited;
     }
 

@@ -5,7 +5,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class Crawler {
 
-    public static void showResult(ConcurrentHashMap<URLDepthPair, Boolean> source) {
+    public static void showResult(HashMap<URLDepthPair, Boolean> source) {
         for (Map.Entry<URLDepthPair, Boolean> item : source.entrySet()){
             System.out.println(item.getKey());
         }
@@ -30,7 +30,7 @@ public class Crawler {
     //    args = new String[]{"https://en.wikipedia.org/wiki/Wiki", "1", "10"};
     //    args = new String[]{"https://mtuci.ru", "2", "25"};
     //    args = new String[]{"https://stackoverflow.com/questions/5244782/java-concurrent-queries", "2", "50"};
-        args = new String[]{"https://habr.com/", "2", "50"};
+        args = new String[]{"https://habr.com/", "2", "100"};
 
         if (args.length == 3) {
             String startUrl = args[0];
