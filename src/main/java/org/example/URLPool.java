@@ -9,21 +9,20 @@ public class URLPool {
     };
     public HashMap<URLDepthPair, Boolean> visited = new HashMap<>();
     int maxDepth;
-    int threadKeeper = 0;
+    int waitingThreads = 0;
 
     public URLPool(int maxDepth) {
         this.maxDepth = maxDepth;
     }
 
     public synchronized URLDepthPair getPair() {
-        while (notVisited.size() == 0) {
-            threadKeeper++;
+        while (notVisited.isEmpty()) {
+            waitingThreads++;
             try {
                 wait();
-            } catch (InterruptedException e) {
-                System.out.println("");
+            } catch (InterruptedException ignore) {
             }
-            threadKeeper--;
+            waitingThreads--;
         }
         return notVisited.poll();
     }
@@ -38,8 +37,8 @@ public class URLPool {
         }
     }
 
-    public synchronized int getWait() {
-        return threadKeeper;
+    public synchronized int getWaitingWorkers() {
+        return waitingThreads;
     }
 
     public HashMap<URLDepthPair, Boolean> getResult() {

@@ -1,7 +1,6 @@
 package org.example;
 import java.net.MalformedURLException;
 import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
 
 public class Crawler {
 
@@ -51,7 +50,7 @@ public class Crawler {
     //        идея заключается в том, что если очередь пуста
     //        (то есть количество ожидающих задания потоков равно их количеству)
     //        то программа заканчивает работу и выводит результаты
-            while (pool.getWait() != numThreads) {
+            while (pool.getWaitingWorkers() != numThreads) {
                 try {
                     Thread.sleep(10);
                 } catch (InterruptedException ignored) {
