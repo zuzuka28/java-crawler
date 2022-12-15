@@ -4,9 +4,9 @@ import java.util.*;
 
 public class Crawler {
 
-    public static void showResult(HashMap<URLDepthPair, Boolean> source) {
-        for (Map.Entry<URLDepthPair, Boolean> item : source.entrySet()){
-            System.out.println(item.getKey());
+    public static void showResult(HashSet<URLDepthPair> source) {
+        for (URLDepthPair pair: source){
+            System.out.println(pair);
         }
     }
 

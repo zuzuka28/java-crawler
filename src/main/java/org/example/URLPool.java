@@ -1,13 +1,13 @@
 package org.example;
 
-import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.Queue;
-import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class URLPool {
-    public Queue<URLDepthPair> notVisited = new ConcurrentLinkedQueue<>() {
+    public Queue<URLDepthPair> notVisited = new LinkedList<>() {
     };
-    public HashMap<URLDepthPair, Boolean> visited = new HashMap<>();
+    public HashSet<URLDepthPair> visited = new HashSet<>();
     int maxDepth;
     int waitingThreads = 0;
 
@@ -28,8 +28,8 @@ public class URLPool {
     }
 
     public synchronized void addPair(URLDepthPair pair) {
-        if(!visited.containsKey(pair)) {
-            visited.put(pair, true);
+        if(!visited.contains(pair)) {
+            visited.add(pair);
             if (pair.getDepth() < maxDepth) {
                 notVisited.add(pair);
                 notify();
@@ -41,7 +41,7 @@ public class URLPool {
         return waitingThreads;
     }
 
-    public HashMap<URLDepthPair, Boolean> getResult() {
+    public HashSet<URLDepthPair> getResult() {
         return visited;
     }
 
