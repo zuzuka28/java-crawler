@@ -47,19 +47,23 @@ public static void main(String[] args) {
 
         createWorkers(pool, numThreads);
 
+//        данная часть кода отвечает за то, что бы во время остановить выполнение программы
+//        идея заключается в том, что если очередь пуста
+//        (то есть количество ожидающих задания потоков равно их количеству)
+//        то программа заканчивает работу и выводит результаты
         while (pool.getWait() != numThreads) {
             try {
                 Thread.sleep(10);
-            } catch (InterruptedException e) {
-                System.out.println("Ignoring  InterruptedException");
+            } catch (InterruptedException ignored) {
             }
         }
+
         try {
             showResult(pool.getResult());;
-        } catch (NullPointerException e) {
-            System.out.println("Not Link");
+        } catch (NullPointerException ignored) {
         }
         System.exit(0);
+
     } else {
         System.out.println("usage: java Crawler <URL> <maximum_depth> <num_threads> or second/third not digit");
     }

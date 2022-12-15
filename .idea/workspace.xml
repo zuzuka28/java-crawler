@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d6617c0-0ec3-4e86-8344-120885c56409" name="Changes" comment="with threads">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="4d6617c0-0ec3-4e86-8344-120885c56409" name="Changes" comment="remove checker from URLDepthPair">
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Crawler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Crawler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/URLDepthPair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/URLDepthPair.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/URLPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/URLPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CrawlerTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CrawlerTask.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +71,7 @@
       <updated>1670881368370</updated>
       <workItem from="1670881369767" duration="5197000" />
       <workItem from="1670962575989" duration="11496000" />
-      <workItem from="1671020915286" duration="15966000" />
+      <workItem from="1671020915286" duration="16475000" />
     </task>
     <task id="LOCAL-00001" summary="one thread">
       <created>1671056114175</created>
@@ -89,7 +87,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671064027658</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="remove checker from URLDepthPair">
+      <created>1671064610688</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1671064610688</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -109,19 +114,20 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="one thread" />
     <MESSAGE value="with threads" />
-    <option name="LAST_COMMIT_MESSAGE" value="with threads" />
+    <MESSAGE value="remove checker from URLDepthPair" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove checker from URLDepthPair" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/CrawlerTask.java</url>
-          <line>71</line>
+          <line>69</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/CrawlerTask.java</url>
-          <line>60</line>
+          <line>58</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>

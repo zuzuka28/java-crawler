@@ -29,8 +29,7 @@ public class CrawlerTask implements Runnable{
             for (Element tag : linkTags) {
                 newUrls.add(tag.attr("abs:href"));
             }
-        } catch (IOException e){
-//            System.out.println(e.getMessage());
+        } catch (IOException ignored){
         }
         return newUrls;
     }
@@ -42,8 +41,7 @@ public class CrawlerTask implements Runnable{
             try {
                 URLDepthPair pair = new URLDepthPair(item, depth);
                 converted.add(pair);
-            } catch (MalformedURLException e){
-//                System.out.println(e.getMessage());
+            } catch (MalformedURLException ignored){
             }
         }
         return converted;
@@ -71,7 +69,7 @@ public class CrawlerTask implements Runnable{
             try {
                 process(pair);
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                System.out.println(e.getMessage());
             }
 
         }
