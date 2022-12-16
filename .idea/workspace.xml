@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d6617c0-0ec3-4e86-8344-120885c56409" name="Changes" comment="better naming">
+    <list default="true" id="4d6617c0-0ec3-4e86-8344-120885c56409" name="Changes" comment="remove unused concurrent">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Crawler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Crawler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/URLPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/URLPool.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,15 +33,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Crawler" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Crawler" />
@@ -73,7 +75,8 @@
       <workItem from="1670962575989" duration="11496000" />
       <workItem from="1671020915286" duration="17796000" />
       <workItem from="1671111991182" duration="6526000" />
-      <workItem from="1671132377540" duration="2136000" />
+      <workItem from="1671132377540" duration="2890000" />
+      <workItem from="1671230122190" duration="676000" />
     </task>
     <task id="LOCAL-00001" summary="one thread">
       <created>1671056114175</created>
@@ -124,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671119529193</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="remove unused concurrent">
+      <created>1671135469428</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1671135469428</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,7 +159,8 @@
     <MESSAGE value="lint" />
     <MESSAGE value="remove unused concurrent structs" />
     <MESSAGE value="better naming" />
-    <option name="LAST_COMMIT_MESSAGE" value="better naming" />
+    <MESSAGE value="remove unused concurrent" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove unused concurrent" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -171,12 +182,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/Crawler.java</url>
-          <line>53</line>
+          <line>54</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/Crawler.java</url>
-          <line>23</line>
+          <line>24</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>

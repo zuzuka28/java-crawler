@@ -1,47 +1,46 @@
 package org.example;
 
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class URLPool {
-    public Queue<URLDepthPair> notVisited = new LinkedList<>() {
+    public ConcurrentLinkedQueue<URLDepthPair> notVisited = new ConcurrentLinkedQueue<>() {
     };
-    public HashSet<URLDepthPair> visited = new HashSet<>();
+    public ConcurrentHashMap<URLDepthPair, Boolean> visited = new ConcurrentHashMap<>();
     int maxDepth;
-    int waitingThreads = 0;
+    AtomicInteger waitingThreads = new AtomicInteger(0);
 
     public URLPool(int maxDepth) {
         this.maxDepth = maxDepth;
     }
 
-    public synchronized URLDepthPair getPair() {
-        while (notVisited.isEmpty()) {
-            waitingThreads++;
-            try {
-                wait();
-            } catch (InterruptedException ignore) {
+    public URLDepthPair getPair() {
+        System.out.println(waitingThreads.get());
+        waitingThreads.getAndIncrement();
+        URLDepthPair pair;
+        while (true) {
+            if ((pair = notVisited.poll()) != null){
+                waitingThreads.getAndDecrement();
+                return pair;
             }
-            waitingThreads--;
         }
-        return notVisited.poll();
     }
 
-    public synchronized void addPair(URLDepthPair pair) {
-        if(!visited.contains(pair)) {
-            visited.add(pair);
+    public void addPair(URLDepthPair pair) {
+        if(!visited.containsKey(pair)) {
+            visited.put(pair, true);
             if (pair.getDepth() < maxDepth) {
                 notVisited.add(pair);
-                notify();
             }
         }
     }
 
-    public synchronized int getWaitingWorkers() {
-        return waitingThreads;
+    public int getWaitingWorkers() {
+        return waitingThreads.get();
     }
 
-    public HashSet<URLDepthPair> getResult() {
+    public ConcurrentHashMap<URLDepthPair, Boolean> getResult() {
         return visited;
     }
 
