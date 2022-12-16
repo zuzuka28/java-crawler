@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d6617c0-0ec3-4e86-8344-120885c56409" name="Changes" comment="remove unused concurrent">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="4d6617c0-0ec3-4e86-8344-120885c56409" name="Changes" comment="add concurrency">
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Crawler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Crawler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/URLPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/URLPool.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +74,7 @@
       <workItem from="1671020915286" duration="17796000" />
       <workItem from="1671111991182" duration="6526000" />
       <workItem from="1671132377540" duration="2890000" />
-      <workItem from="1671230122190" duration="676000" />
+      <workItem from="1671230122190" duration="1086000" />
     </task>
     <task id="LOCAL-00001" summary="one thread">
       <created>1671056114175</created>
@@ -134,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671135469428</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="add concurrency">
+      <created>1671230939609</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1671230939609</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,7 +165,8 @@
     <MESSAGE value="remove unused concurrent structs" />
     <MESSAGE value="better naming" />
     <MESSAGE value="remove unused concurrent" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove unused concurrent" />
+    <MESSAGE value="add concurrency" />
+    <option name="LAST_COMMIT_MESSAGE" value="add concurrency" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -182,7 +188,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/Crawler.java</url>
-          <line>54</line>
+          <line>55</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

@@ -43,6 +43,7 @@ public class Crawler {
                 pool.addPair(new URLDepthPair(startUrl, 0));
             } catch (MalformedURLException e) {
                 System.out.println("Invalid start URL");
+                System.exit(0);
             }
 
             createWorkers(pool, numThreads);
