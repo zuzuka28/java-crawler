@@ -28,9 +28,9 @@ public class Crawler {
 //    [2] - Максимальная количество worker'ов
     public static void main(String[] args) {
     //    args = new String[]{"https://en.wikipedia.org/wiki/Wiki", "1", "10"};
-    //    args = new String[]{"https://mtuci.ru", "2", "25"};
+        args = new String[]{"https://mtuci.ru", "2", "25"};
     //    args = new String[]{"https://stackoverflow.com/questions/5244782/java-concurrent-queries", "2", "50"};
-        args = new String[]{"https://habr.com/", "3", "100"};
+//        args = new String[]{"https://habr.com/", "3", "100"};
 
         if (args.length == 3) {
             String startUrl = args[0];

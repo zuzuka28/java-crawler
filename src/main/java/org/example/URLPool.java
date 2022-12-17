@@ -16,7 +16,6 @@ public class URLPool {
     }
 
     public URLDepthPair getPair() {
-        System.out.println(waitingThreads.get());
         waitingThreads.getAndIncrement();
         URLDepthPair pair;
         while (true) {
