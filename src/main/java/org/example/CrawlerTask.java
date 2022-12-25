@@ -8,6 +8,7 @@ import org.jsoup.select.Elements;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.util.HashSet;
 import java.util.LinkedList;
 
 public class CrawlerTask implements Runnable{
@@ -21,8 +22,8 @@ public class CrawlerTask implements Runnable{
         return Jsoup.connect(pair.getUrl().toString());
     }
 
-    private LinkedList<String> getNewUrls(Connection connection){
-        LinkedList<String> newUrls = new LinkedList<>();
+    private HashSet<String> getNewUrls(Connection connection){
+        HashSet<String> newUrls = new HashSet<>();
         try {
             Document doc = connection.get();
             Elements linkTags = doc.select("a");
@@ -34,7 +35,7 @@ public class CrawlerTask implements Runnable{
         return newUrls;
     }
 
-    private LinkedList<URLDepthPair> convertNewUrlsToPairs(LinkedList<String> urls, int depth){
+    private LinkedList<URLDepthPair> convertNewUrlsToPairs(HashSet<String> urls, int depth){
         LinkedList<URLDepthPair> converted = new LinkedList<>();
 
         for (String item : urls){
@@ -50,11 +51,12 @@ public class CrawlerTask implements Runnable{
 
     public void process(URLDepthPair pair) throws IOException {
         Connection connection = makeRequest(pair);
-        LinkedList<String> urlsFromSource = getNewUrls(connection);
+        HashSet<String> urlsFromSource = getNewUrls(connection);
         LinkedList<URLDepthPair> urlsToAdd = convertNewUrlsToPairs(
                 urlsFromSource,
                 pair.getDepth() + 1
         );
+
 
         for (URLDepthPair item: urlsToAdd){
             urlPool.addPair(item);
